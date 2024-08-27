@@ -1,0 +1,97 @@
+version: 1.0
+
+instances:
+  - name: carter
+    type: robot
+  - name: wp_home
+    type: waypoint
+  - name: wp_charge
+    type: waypoint
+  - name: wp_1
+    type: waypoint
+  - name: wp_2
+    type: waypoint
+  - name: wp_3
+    type: waypoint
+  - name: wp_4 
+    type: waypoint
+  - name: wp_5
+    type: waypoint
+  - name: wp_6
+    type: waypoint
+  - name: wp_7  
+    type: waypoint
+  - name: wp_8
+    type: waypoint
+  - name: wp_9
+    type: waypoint
+  - name: wp_10 
+    type: waypoint
+  - name: wp_11
+    type: waypoint
+  - name: wp_12 
+    type: waypoint
+  - name: wp_13 
+    type: waypoint
+  - name: wp_14 
+    type: waypoint
+  - name: wp_15
+    type: waypoint
+  - name: wp_16
+    type: waypoint
+  - name: wp_17
+    type: waypoint
+  - name: wp_18
+    type: waypoint
+
+predicates:
+  - name: robot_at
+    parameters: [carter, wp_home]
+  - name: charging_point_at
+    parameters: [wp_charge]
+  - name: battery_low
+    parameters: [carter]
+
+connections:
+  - [home, 1]
+  - [home, charge]
+  - [1, charge]
+  - [1, 2]
+  - [2, 3]
+  - [3, 4]
+  - [4, 1]
+  - [1, 12]
+  - [12, 5]
+  - [12, 11]
+  - [5, 6]
+  - [6, 11]
+  - [11, 10]
+  - [10, 7]
+  - [10, 9]
+  - [7, 8]
+  - [8, 9]
+  - [9, 13]
+  - [13, 15]
+  - [15, 14]
+  - [14, 16]
+  - [16, 17]
+  - [17, 18]
+  - [18, 1]
+
+goals:
+  - patrolled wp_18 is_shot wp_18
+  - patrolled wp_3 is_shot wp_3
+  - patrolled wp_13 is_shot wp_13
+  - patrolled wp_8 is_shot wp_8
+  - patrolled wp_1 is_shot wp_1
+  - patrolled wp_17 is_shot wp_17
+  - patrolled wp_4 is_shot wp_4
+  - patrolled wp_10 is_shot wp_10
+  - patrolled wp_14 is_shot wp_14
+  - patrolled wp_7 is_shot wp_7
+  - patrolled wp_12 is_shot wp_12
+  - patrolled wp_16 is_shot wp_16
+  - patrolled wp_5 is_shot wp_5
+  - patrolled wp_11 is_shot wp_11
+  - patrolled wp_15 is_shot wp_15
+  - patrolled wp_6 is_shot wp_6

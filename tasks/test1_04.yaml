@@ -1,0 +1,64 @@
+waypoint_sequence:
+  - waypoint: 1
+    actions: 
+      - patrol
+  - waypoint: 2
+    actions:
+      - shot
+      - patrol
+  - waypoint: 3
+    actions:
+      - patrol
+      - shot
+  - waypoint: 4
+    actions:
+      - shot
+      - patrol
+  - waypoint: 5
+    actions:
+      - patrol
+      - shot
+  - waypoint: 6
+    actions:
+      - shot
+  - waypoint: 7
+    actions:
+      - patrol
+  - waypoint: 8
+    actions:
+      - shot
+      - patrol
+  - waypoint: 9
+    actions:
+      - patrol
+      - shot
+  - waypoint: 10
+    actions: []
+  - waypoint: 11
+    actions:
+      - patrol
+      - shot
+  - waypoint: 12
+    actions:
+      - shot
+  - waypoint: 13
+    actions: []
+  - waypoint: 14
+    actions:
+      - patrol
+  - waypoint: 15
+    actions:
+      - shot
+      - patrol
+  - waypoint: 16
+    actions:
+      - patrol
+      - shot
+  - waypoint: 17
+    actions:
+      - shot
+      - patrol
+  - waypoint: 18
+    actions:
+      - patrol
+      - shot

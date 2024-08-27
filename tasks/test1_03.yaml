@@ -1,0 +1,25 @@
+waypoint_sequence:
+  - group: shot_only
+    waypoints:
+      - wp_18
+      - wp_17
+      - wp_16
+      - wp_15
+      - wp_14
+      - wp_13
+  - group: patrol_only
+    waypoints:
+      - wp_2
+      - wp_1
+      - wp_12
+      - wp_11
+      - wp_10
+      - wp_9
+  - group: patrol_and_shot
+    waypoints:
+      - wp_3
+      - wp_4
+      - wp_5
+      - wp_6
+      - wp_7
+      - wp_8

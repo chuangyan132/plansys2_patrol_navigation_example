@@ -1,0 +1,117 @@
+version: 1.0
+
+instances:
+  - name: carter
+    type: robot
+  - name: wp_home
+    type: waypoint
+  - name: wp_charge
+    type: waypoint
+  - name: wp_1
+    type: waypoint
+  - name: wp_2
+    type: waypoint
+  - name: wp_3
+    type: waypoint
+  - name: wp_4 
+    type: waypoint
+  - name: wp_5
+    type: waypoint
+  - name: wp_6
+    type: waypoint
+  - name: wp_7  
+    type: waypoint
+  - name: wp_8
+    type: waypoint
+  - name: wp_9
+    type: waypoint
+  - name: wp_10 
+    type: waypoint
+  - name: wp_11
+    type: waypoint
+  - name: wp_12 
+    type: waypoint
+  - name: wp_13 
+    type: waypoint
+  - name: wp_14 
+    type: waypoint
+  - name: wp_15
+    type: waypoint
+  - name: wp_16
+    type: waypoint
+  - name: wp_17
+    type: waypoint
+  - name: wp_18
+    type: waypoint
+
+predicates:
+  - name: robot_at
+    parameters: [carter, wp_home]
+  - name: charging_point_at
+    parameters: [wp_charge]
+  - name: battery_low
+    parameters: [carter]
+
+connections:
+  - [home, 1]
+  - [1, charge]
+  - [1, 2]
+  - [2, 3]
+  - [3, 4]
+  - [4, 1]
+  - [1, 3]
+  - [2, 4]
+  - [1, 12]
+  - [12, 5]
+  - [5, 2]
+  - [3, 15]
+  - [4, 16]
+  - [16, 13]
+  - [13, 3]
+  - [5, 14]
+  - [14, 6]
+  - [6, 13]
+  - [13, 15]
+  - [6, 11]
+  - [6, 10]
+  - [5, 11]
+  - [12, 11]
+  - [11, 10]
+  - [10, 9]
+  - [9, 13]
+  - [7, 8]
+  - [8, 9]
+  - [9, 7]
+  - [7, 10]
+  - [8, 10]
+  - [10, 13]
+  - [16, 17]
+  - [17, 18]
+  - [18, 16]
+  - [18, 1]
+  - [17, 14]
+  - [15, 12]
+  - [18, charge]
+  - [16, charge]
+  - [14, charge]
+  - [11, charge]
+  - [9, charge]
+
+goals:
+  - patrolled wp_18 is_shot wp_18
+  - patrolled wp_3 is_shot wp_3
+  - patrolled wp_13 is_shot wp_13
+  - patrolled wp_8 is_shot wp_8
+  - patrolled wp_1 is_shot wp_1
+  - patrolled wp_17 is_shot wp_17
+  - patrolled wp_4 is_shot wp_4
+  - patrolled wp_10 is_shot wp_10
+  - patrolled wp_14 is_shot wp_14
+  - patrolled wp_7 is_shot wp_7
+  - patrolled wp_12 is_shot wp_12
+  - patrolled wp_16 is_shot wp_16
+  - patrolled wp_5 is_shot wp_5
+  - patrolled wp_11 is_shot wp_11
+  - patrolled wp_15 is_shot wp_15
+  - patrolled wp_6 is_shot wp_6
+
