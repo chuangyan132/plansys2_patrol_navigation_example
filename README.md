@@ -2,7 +2,7 @@
 
 ## Description
 
-(**Requires Navigation2**)
+(**Requires Navigation2, warehouse project in isaac simulation**)
 
 This example shows:
 - How to use an application to initiate knowledge (the PDDL problem) and control its execution flow.
@@ -23,3 +23,56 @@ In terminal 2:
 ```
 ros2 run plansys2_patrol_navigation_example patrolling_controller_node
 ```
+
+## Explanation
+### What is this package?
+- This package is a planner and executor to manage the specific workflow in a scenario: Warehouse simulated in Isaac Sim
+- Planner: it reads domain.pddl into plansys2, and problem into problem.expert. Then it translate the plan generated from pddl by pddl planner into a BT file. The executor(controller node in src) will read the BT file and call actions which run at behind by launch file in specific sequence controlled by BT file.
+- pddl
+  - different domain.pddl to describe different case in scenario warehouse.
+- src
+  - skill ros2 node
+    - ask charge
+    - charging
+    - move
+    - patrol
+    - shot
+  - controller ros2 node
+    - patrolling_controller_node.cpp
+    - patrolling_controller_test1_03_node.cpp
+    - ...
+- tasks
+  - used in controller ros node. describe a task used in controller node. the controller node will read it and parse it to class itself.
+### How does it work?
+1. Define first domain.pddl
+   1. Define types
+   2. Define predicates
+   3. Define action(action name should be same as ros2 node)
+2. Define problem
+   1. Define Instances
+   2. Define Predicates
+   3. Define the Goal(Goal is also predicates)
+3. Create ROS2 node in src
+   1. controller node 
+      1. We can define the problem here
+      ``` cpp
+      //initialization
+      init() 
+      // add problem in pddl to controller.(instances, predicates, goal)
+      init_knowledge() 
+      // step() manage different state of workflow, 
+      step()
+      ```
+   2. skil node
+      1. even you have ros2 node coded already, you still need to write the node inherit from plansys2, so the controller can manage it. but you can create the skil node as client to call service from your skil node.
+      2. name in skil node should be same as name in pddl action.
+      ``` cpp
+      node->set_parameter(rclcpp::Parameter("action_name", "askcharge"));
+      //name
+      node->trigger_transition(lifecycle_msgs::msg::Transition::TRANSITION_CONFIGURE);
+      //the skill node will run always, the lifecycle is managed by controller node.
+      ```
+
+### How to use plansys2 to solve a task?
+### Dive into code
+## Comments
