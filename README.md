@@ -72,7 +72,16 @@ ros2 run plansys2_patrol_navigation_example patrolling_controller_node
       node->trigger_transition(lifecycle_msgs::msg::Transition::TRANSITION_CONFIGURE);
       //the skill node will run always, the lifecycle is managed by controller node.
       ```
+4. RUN
+   1. prepare two terminal, one is launch plansys2_bringup. second is run the controller node in src
+   2. The BT and generated plan is in hide mode, not visible to user. We can print the progress in step function inside the file: controller_node.cpp
 
 ### How to use plansys2 to solve a task?
+1. Define a domain and problem as pddl format for your task. The goal is described as predicate.
+2. Write skill node and controller node inherited from plansys2.
+3. RUN
+   1. launch plansys2_bringup 
+   2. run controller_node.cpp
 ### Dive into code
+future work
 ## Comments
